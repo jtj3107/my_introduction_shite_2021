@@ -21,9 +21,79 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.2/dist/full.css" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="/resource/common.css" />
+<link rel="stylesheet" href="/resource/font.css" />
 <script src="/resource/common.js" defer="defer"></script>
 
 </head>
 <body>
+  <header class="top-bar hidden md:block fixed inset-0 h-16 bottom-auto font-bold ">
+    <div class="h-full container mx-auto flex">
+      <a href="/" class="top-bar__logo flex items-center px-4 hover:underline hover:text-red-500">
+        <span> MataM </span>
+      </a>
 
+      <div class="flex-grow"></div>
+
+      <nav class="top-bar__menu-box-1">
+        <ul class="flex h-full">
+          <li>
+            <a href="/" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
+              <span>
+                <i class="fas fa-home"></i>
+              </span>
+              <span class="hidden sm:block">&nbsp;HOME</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
+              <span>
+                <i class="fas fa-book"></i>
+              </span>
+              <span class="hidden sm:block">&nbsp;Diary</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
+              <span>
+                <i class="far fa-edit"></i>
+              </span>
+              <span class="hidden sm:block">&nbsp;GuestBook</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
+              <span>
+                <i class="fas fa-sign-in-alt"></i>
+              </span>
+              <span class="hidden sm:block">&nbsp;Login</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <header class="mobile-top-bar md:hidden fixed inset-0 h-20 bottom-auto font-bold ">
+    <div class="h-full container mx-auto flex">
+      <a href="/" class="top-bar__logo flex items-center px-4 hover:underline hover:text-red-500">
+        <span> MataM </span>
+      </a>
+
+      <div class="flex-grow"></div>
+
+      <a href="#" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
+        <span>
+          <i class="fas fa-book"></i>
+        </span>
+        <span class="hidden sm:block">&nbsp;Diary</span>
+      </a>
+
+      <a href="#" class="h-full flex items-center px-4 hover:text-red-500">
+        <span>
+          <i class="fas fa-bars"></i>
+        </span>
+      </a>
+
+    </div>
+  </header>
   <main>
