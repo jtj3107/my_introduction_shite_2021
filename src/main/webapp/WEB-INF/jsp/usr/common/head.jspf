@@ -26,10 +26,57 @@
 
 </head>
 <body>
+  <div class="search-bar">
+    <form action="../article/list">
+      <div>
+        <div class="badge">검색</div>
+      </div>
+      <div>
+        <label class="label">
+          <span class="label-text">게시판</span>
+        </label>
+        <div>
+          <select name="boardId" class="select select-bordered w-full">
+            <option value="0">선택없음</option>
+            <option value="1">다이어리</option>
+            <option value="2">방명록</option>
+          </select>
+        </div>
+      </div>
+      
+      <div>
+        <label class="label">
+          <span class="label-text">검색타입</span>
+        </label>
+        <div>
+          <select name="searchKeywordTypeCode" class="select select-bordered w-full">
+            <option value="title,body">제목,내용</option>
+            <option value="title">제목</option>
+            <option value="body">내용</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="label">
+          <span class="label-text">검색어</span>
+        </label>
+        <div>
+          <input autocomplete="off" class="input input-bordered w-full" maxlength="100" name="searchKeyword" type="text" placeholder="검색어를 입력해주세요."/>
+        </div>
+      </div>
+    
+      <div class="btns">
+        <button type="submit" class="btn btn-link">검색</button>
+        <button type="button" class="btn btn-link btn-hide-search-bar">검색취소</button>
+      </div>
+    </form>
+  </div>
+
   <header class="top-bar hidden md:block fixed inset-0 h-16 bottom-auto font-bold ">
     <div class="h-full container mx-auto flex">
-      <a href="/" class="top-bar__logo flex items-center px-4 hover:underline hover:text-red-500">
-        <span> MataM </span>
+      <a href="/" class="top-bar__logo flex items-center px-4">
+        <span class="text-3xl"> MataM </span>
       </a>
 
       <div class="flex-grow"></div>
@@ -71,7 +118,7 @@
           <li>
             <a class="h-full flex items-center px-4 btn-show-search-bar relative">
               <span>
-                <input type="text" class="input input-sm input-bordered w-24 lg:w-32" placeholder="Search.." />
+                <input readonly="readonly" type="text" class="input input-sm input-bordered w-24 lg:w-32" placeholder="Search.." />
               </span>
               <span class="absolute top-0 bottom-0 right-0 flex items-center mr-8 cursor-pointer hover:text-red-500">
                 <i class="fas fa-search"></i>
