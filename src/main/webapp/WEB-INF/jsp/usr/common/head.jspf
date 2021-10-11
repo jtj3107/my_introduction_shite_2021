@@ -43,7 +43,7 @@
           </select>
         </div>
       </div>
-      
+
       <div>
         <label class="label">
           <span class="label-text">검색타입</span>
@@ -62,10 +62,11 @@
           <span class="label-text">검색어</span>
         </label>
         <div>
-          <input autocomplete="off" class="input input-bordered w-full" maxlength="100" name="searchKeyword" type="text" placeholder="검색어를 입력해주세요."/>
+          <input autocomplete="off" class="input input-bordered w-full" maxlength="100" name="searchKeyword" type="text"
+            placeholder="검색어를 입력해주세요." />
         </div>
       </div>
-    
+
       <div class="btns">
         <button type="submit" class="btn btn-link">검색</button>
         <button type="button" class="btn btn-link btn-hide-search-bar">검색취소</button>
@@ -130,6 +131,8 @@
     </div>
   </header>
 
+  <%@ include file="mobileSideBar.jspf"%>
+
   <header class="mobile-top-bar md:hidden fixed inset-0 h-20 bottom-auto font-bold ">
     <div class="h-full container mx-auto flex">
       <a href="/" class="top-bar__logo flex items-center px-4 hover:underline hover:text-red-500">
@@ -144,14 +147,14 @@
         </span>
         <span class="hidden sm:block">&nbsp;Diary</span>
       </a>
-      
-      <a class="btn-show-search-bar flex items-center px-4 hover:text-red-500">
-          <span>
-            <i class="fas fa-search"></i>
-          </span>
-        </a>
 
-      <a href="#" class="h-full flex items-center px-4 hover:text-red-500">
+      <a class="btn-show-search-bar flex items-center px-4 hover:text-red-500">
+        <span>
+          <i class="fas fa-search"></i>
+        </span>
+      </a>
+
+      <a href="#" class="btn-show-mobile-side-bar h-full flex items-center px-4 hover:text-red-500">
         <span>
           <i class="fas fa-bars"></i>
         </span>
