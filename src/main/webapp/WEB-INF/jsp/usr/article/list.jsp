@@ -6,36 +6,39 @@
 <section class="section section-article-list">
   <div class="container mx-auto px-4">
     <span>${board.name}</span>
-     
-    <div class="px-4">
-      <c:forEach items="${articles}" var="article">
-        <div class="grid gap-3">
-          <a href="#">
-            <span class="badge badge-outline">제목</span>
-            <div>${article.title}</div>
-          </a>
-        </div>
-        
-        <div class="mt-3 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          <a href="#">
-            <span class="badge badge-outline">번호</span>
-            <div>${article.id}</div>
-          </a>
-          <a href="#">
-            <span class="badge badge-outline">작성자</span>
-            <div>${article.extra__writerName}</div>
-          </a>
-          <a href="#">
-            <span class="badge badge-outline">등록날짜</span>
-            <div>${article.forPrintType2RegDate}</div>
-          </a>
-          <a href="#">
-            <span class="badge badge-outline">수정날짜</span>
-            <div>${article.forPrintType2UpdateDate}</div>
-          </a>
-        </div>
-        <hr />
-      </c:forEach>
+
+    <div class="mt-3">
+      <table class="table table-fixed w-full">
+        <colgroup>
+          <col width="10%" />
+          <col width="20%" />
+          <col width="20%" />
+          <col width="*" />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>작성날짜</th>
+            <th>수정날짜</th>
+            <th>작성자</th>
+            <th>제목</th>
+          </tr>
+        </thead>
+        <tbody>
+          <c:forEach var="article" items="${articles}">
+            <tr>
+              <th>${article.id}</th>
+              <td>${article.forPrintType1RegDate}</td>
+              <td>${article.forPrintType1UpdateDate}</td>
+              <td>${article.extra__writerName}</td>
+              <td>
+                <a class="btn-text-link block w-full truncate" href="../article/detail?id=${article.id}">${article.title}</a>
+              </td>
+            </tr>
+          </c:forEach>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
