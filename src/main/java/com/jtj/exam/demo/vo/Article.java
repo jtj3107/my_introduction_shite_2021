@@ -16,6 +16,8 @@ public class Article {
 	private String title;
 	private String body;
 	
+	private String extra__writerName;
+	
 	public String getForPrintType1RegDate() {
 		return regDate.substring(2, 16).replace(" ", "<br>");
 	}
