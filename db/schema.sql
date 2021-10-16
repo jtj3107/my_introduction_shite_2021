@@ -45,7 +45,7 @@ CREATE TABLE `member` (
     regDate DATETIME NOT NULL,
     updatedate DATETIME NOT NULL,
     loginId CHAR(20) NOT NULL,
-    loginPw CHAR(20) NOT NULL,
+    loginPw CHAR(100) NOT NULL,
     authLevel SMALLINT(2) UNSIGNED DEFAULT 3 COMMENT '권한레벨(3=일반일,7=관리자)',
     `name` CHAR(20) NOT NULL,
     nickname CHAR(20) NOT NULL,
@@ -60,7 +60,7 @@ INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'admin',
-loginPw = 'admin',
+loginPw = SHA2('admin', 256),
 authLevel = 7,
 `name` = '관리자',
 nickname = '관리자',
@@ -72,7 +72,7 @@ INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'user1',
-loginPw = 'user1',
+loginPw = SHA2('user1', 256),
 `name` = '사용자1',
 nickname = '사용자1',
 cellphoneNo = '01011111111',
@@ -82,7 +82,7 @@ INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'user2',
-loginPw = 'user2',
+loginPw = SHA2('user2', 256),
 `name` = '사용자2',
 nickname = '사용자2',
 cellphoneNo = '01011111111',
@@ -111,3 +111,13 @@ SET regDate = NOW(),
 updateDate = NOW(),
 `code` = 'GuestBook',
 `name` = '방명록';
+
+# 게시물 개수 늘리기
+/*
+insert into article
+(
+    regDate, updateDate, memberId, boardId, title, `body`
+)
+select now(), now(), FLOOR(RAND() * 2) + 1, FLOOR(RAND() * 2) + 1, concat('제목_', rand()), CONCAT('내용_', RAND())
+from article;
+*/
