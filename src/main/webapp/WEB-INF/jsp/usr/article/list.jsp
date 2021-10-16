@@ -45,7 +45,7 @@
         </tbody>
       </table>
     </div>
-    <div class="page-menu hidden md:flex justify-center">
+    <div class="page-menu hidden md:flex justify-center mt-5">
       <c:set var="pageMenuArmSize" value="4" />
       <c:set var="startPage" value="${page - pageMenuArmSize >= 1 ? page - pageMenuArmSize : 1}" />
       <c:set var="endPage" value="${page + pageMenuArmSize <= pageCount ? page + pageMenuArmSize : pageCount}" />
@@ -81,7 +81,7 @@
       </div>
     </div>
     
-    <div class="page-menu flex md:hidden justify-center">
+    <div class="page-menu flex md:hidden justify-center mt-5">
       <c:set var="pageMenuArmSize" value="2" />
       <c:set var="startPage" value="${page - pageMenuArmSize >= 1 ? page - pageMenuArmSize : 1}" />
       <c:set var="endPage" value="${page + pageMenuArmSize <= pageCount ? page + pageMenuArmSize : pageCount}" />
