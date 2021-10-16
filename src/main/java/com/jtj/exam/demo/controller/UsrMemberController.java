@@ -18,6 +18,7 @@ public class UsrMemberController {
 		this.memberService = memberService;
 		this.rq = rq;
 	}
+	
 	@RequestMapping("/usr/member/login")
 	public String showLogin() {
 		return "usr/member/login";
@@ -58,6 +59,11 @@ public class UsrMemberController {
 		rq.logout();
 		
 		return rq.jsReplace("로그아웃 되었습니다.", "/");
+	}
+	
+	@RequestMapping("/usr/member/join")
+	public String showJoin() {
+		return "usr/member/join";
 	}
 	
 }
