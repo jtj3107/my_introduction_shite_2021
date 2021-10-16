@@ -108,6 +108,7 @@
               <span class="hidden sm:block">&nbsp;GuestBook</span>
             </a>
           </li>
+          <c:if test="${!rq.isLogined()}">
           <li>
             <a href="../member/login" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
               <span>
@@ -116,6 +117,25 @@
               <span class="hidden sm:block">&nbsp;Login</span>
             </a>
           </li>
+          </c:if>
+          <c:if test="${rq.isLogined()}">
+          <li>
+            <a href="../member/myPage" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
+              <span>
+                <i class="fas fa-user"></i>
+              </span>
+              <span class="hidden sm:block">&nbsp;${rq.loginedMember.nickname}'s profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="../member/doLogout" class="h-full flex items-center px-4 hover:underline hover:text-red-500">
+              <span>
+                <i class="fas fa-sign-out-alt"></i>
+              </span>
+              <span class="hidden sm:block">&nbsp;Logout</span>
+            </a>
+          </li>
+          </c:if>
           <li>
             <a class="h-full flex items-center px-4 btn-show-search-bar relative">
               <span>

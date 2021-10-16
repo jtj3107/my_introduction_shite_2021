@@ -48,4 +48,16 @@ public class UsrMemberController {
 		return rq.jsReplace(Ut.f("%s님 환영합니다.", member.getNickname()), "/");
 	}
 	
+	@RequestMapping("/usr/member/doLogout")
+	@ResponseBody
+	public String doLogout() {
+		if(!rq.isLogined()) {
+			return rq.jsHistoryBack("이미 로그아웃 상태입니다.");
+		}
+
+		rq.logout();
+		
+		return rq.jsReplace("로그아웃 되었습니다.", "/");
+	}
+	
 }

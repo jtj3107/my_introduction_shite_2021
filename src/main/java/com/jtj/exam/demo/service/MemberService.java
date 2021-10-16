@@ -14,9 +14,8 @@ public class MemberService {
 		this.memberRepository = memberRepository;
 	}
 	
-	public Member getMemberById(int loginedMemberId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Member getMemberById(int id) {
+		return memberRepository.getMemberById(id);
 	}
 
 	public Member getMemberByLoginId(String loginId) {

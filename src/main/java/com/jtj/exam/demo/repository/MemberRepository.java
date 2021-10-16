@@ -15,4 +15,11 @@ public interface MemberRepository {
 			""")
 	public Member getMemberByLoginId(String loginId);
 
+	@Select("""
+			SELECT *
+			FROM `member` AS M
+			WHERE M.id = #{id}
+			""")
+	public Member getMemberById(int id);
+
 }
