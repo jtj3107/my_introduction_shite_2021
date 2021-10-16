@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.jtj.exam.demo.service.MemberService;
 import com.jtj.exam.demo.util.Ut;
 import com.jtj.exam.demo.vo.Member;
+import com.jtj.exam.demo.vo.ResultData;
 import com.jtj.exam.demo.vo.Rq;
 
 @Controller
@@ -66,4 +67,39 @@ public class UsrMemberController {
 		return "usr/member/join";
 	}
 	
+	@RequestMapping("/usr/member/doJoin")
+	@ResponseBody
+	public String doJoin(String loginId, String loginPwReal, String name, String nickname, String email, String cellphoneNo) {
+		if(Ut.empty(loginId)) {
+			return rq.jsHistoryBack("loginId(을)를 입력해주세요.");
+		}
+		
+		if(Ut.empty(loginPwReal)) {
+			return rq.jsHistoryBack("loginPw(을)를 입력해주세요.");
+		}
+		
+		if(Ut.empty(name)) {
+			return rq.jsHistoryBack("name(을)를 입력해주세요.");
+		}
+		
+		if(Ut.empty(nickname)) {
+			return rq.jsHistoryBack("nickname(을)를 입력해주세요.");
+		}
+		
+		if(Ut.empty(email)) {
+			return rq.jsHistoryBack("email(을)를 입력해주세요.");
+		}
+		
+		if(Ut.empty(cellphoneNo)) {
+			return rq.jsHistoryBack("cellphoneNo(을)를 입력해주세요.");
+		}
+		
+		ResultData joinRd = memberService.join(loginId, loginPwReal, name, nickname, email, cellphoneNo);
+		
+		if(joinRd.isFail()) {
+			return rq.jsHistoryBack(joinRd.getMsg());
+		}
+		
+		return rq.jsReplace(joinRd.getMsg(), "../member/login");
+	}
 }
